@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    height: 100%;
+    overflow: hidden;
+  }
+
+/* 背景 */
+body {
+    background-image: linear-gradient(rgb(63, 63, 63), rgb(0, 0, 0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* ボタン */
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 100px;
+    color: #fff;
+    background-image: linear-gradient(rgb(56, 176, 209), rgb(0, 108, 138));
+    font-size: 30px;
+    width: 250px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
+  }
+  
+  button:active {
+    background-image: linear-gradient(rgb(0, 108, 138), rgb(56, 176, 209));
+  }  
+
+  .circles {
+    display: none;
+    height: 80px;
+    width: 80px;
+    pointer-events: none;
+    position: relative;
+  }
+  
+  .circles li {
+    list-style-type: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .circles li div {
+    list-style-type: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: 10s linear 0s 1 normal circle-wrapper;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circles li div::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    border: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 0.4s linear 0s infinite normal circle-outer;
+  }
+  
+  .circles li div::before {
+    content: "";
+    display: block;
+    border-radius: 100%;
+    background-color: #fff;
+    animation: 0.4s linear 0s infinite normal circle-inner;
+  }
+  
+  .circles li:nth-child(1),
+  .circles li:nth-child(9) {
+    transform: rotate(45deg);
+  }
+  
+  .circles li:nth-child(2),
+  .circles li:nth-child(10) {
+    transform: rotate(90deg);
+  }
+  
+  .circles li:nth-child(3),
+  .circles li:nth-child(11) {
+    transform: rotate(135deg);
+  }
+  
+  .circles li:nth-child(4),
+  .circles li:nth-child(12) {
+    transform: rotate(180deg);
+  }
+  
+  .circles li:nth-child(5),
+  .circles li:nth-child(13) {
+    transform: rotate(-45deg);
+  }
+  
+  .circles li:nth-child(6),
+  .circles li:nth-child(14) {
+    transform: rotate(-90deg);
+  }
+  
+  .circles li:nth-child(7),
+  .circles li:nth-child(15) {
+    transform: rotate(-135deg);
+  }
+  
+  .circles li:nth-child(9) div,
+  .circles li:nth-child(10) div,
+  .circles li:nth-child(11) div,
+  .circles li:nth-child(12) div,
+  .circles li:nth-child(13) div,
+  .circles li:nth-child(14) div,
+  .circles li:nth-child(15) div,
+  .circles li:nth-child(16) div {
+    animation-duration: 20s;
+  }
+  
+  @keyframes circle-wrapper {
+    from {
+      left: 0;
+      top: 0;
+    }
+    to {
+      left: 2000px;
+      top: 2000px;
+    }  
+  }
+  
+  @keyframes circle-outer {
+    from {
+      border-color: #fff;
+    }
+    to {
+      border-color: transparent;
+    }  
+  }
+  
+  @keyframes circle-inner {
+    from {
+      height: 0;
+      width: 0;
+    }
+    to {
+      height: 80%;
+      width: 80%;
+    }  
+  } 
+   
